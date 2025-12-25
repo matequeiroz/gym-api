@@ -22,6 +22,16 @@ Modo de desenvolvimento:
 yarn start:dev
 ```
 
+Subindo o banco de dados com Docker:
+```bash
+docker-compose up -d
+```
+
+Para parar o banco de dados:
+```bash
+docker-compose stop
+```
+
 Modo de produção:
 ```bash
 yarn build
