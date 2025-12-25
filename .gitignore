@@ -1,0 +1,17 @@
+node_modules/
+build/
+.env
+*.log
+.env.local
+.env.*.local
+.DS_Store
+*.tmp
+*.swp
+coverage/
+.nyc_output/
+*.pid
+*.lock
+.env.test
+.env.development
+.env.production
+.env.*.local
