@@ -1,5 +1,5 @@
+/* eslint-disable no-useless-catch */
 import type { FastifyReply, FastifyRequest } from 'fastify';
-import { z } from 'zod';
 
 import { registerSchema } from '@/config/schemas/register.schema.ts';
 import { UserService } from '@/services/user.service.ts';
@@ -15,15 +15,11 @@ const register = async (request: FastifyRequest, reply: FastifyReply) => {
 
     return reply.status(201).send({ message: 'User registered successfully' });
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return reply.status(400).send({ error: 'Invalid request data' });
-    }
-
     if ((error as Error).message === 'User already exists') {
       return reply.status(409).send({ error: 'User already exists' });
     }
 
-    return reply.status(500).send({ error: 'Server error' });
+    throw error;
   }
 };
 
