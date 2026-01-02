@@ -2,7 +2,7 @@
 import type { UserRepositoryType } from '@/interfaces/user.repository.ts';
 import * as bcryptjs from 'bcryptjs';
 
-type RegisterServiceType = {
+type RegisterType = {
   name: string;
   email: string;
   password: string;
@@ -15,7 +15,7 @@ export class UserService {
     this.userRepository = userRepository;
   }
 
-  async register({ name, email, password }: RegisterServiceType) {
+  async register({ name, email, password }: RegisterType) {
     const isUserAlreadyRegister = await this.userRepository.findByEmail({
       email,
     });

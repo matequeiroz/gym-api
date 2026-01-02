@@ -18,7 +18,7 @@ const register = async (request: FastifyRequest, reply: FastifyReply) => {
     if (error instanceof z.ZodError) {
       return reply.status(400).send({ error: 'Invalid request data' });
     }
-    console.error('Register error:', (error as Error).message);
+
     if ((error as Error).message === 'User already exists') {
       return reply.status(409).send({ error: 'User already exists' });
     }
