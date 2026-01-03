@@ -2,7 +2,7 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
 
 import { registerSchema } from '@/config/schemas/register.schema.ts';
-import { UserService } from '@/services/user.service.ts';
+import { UserService } from '@/services/user/user.service.ts';
 import { UserRepository } from '@/repositories/user/user.repository.ts';
 
 const register = async (request: FastifyRequest, reply: FastifyReply) => {
