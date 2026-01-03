@@ -4,7 +4,7 @@ import type { UserData } from '@/interfaces/user.repository.ts';
 import type { User } from '@prisma/client';
 
 export class InMemoryUserRepository implements UserRepositoryType {
-  private users: User[] = [];
+  public users: User[] = [];
 
   async create(userData: UserData) {
     const user: User = {

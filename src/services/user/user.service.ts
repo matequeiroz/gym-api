@@ -22,7 +22,7 @@ export class UserService {
       throw new Error('User already exists');
     }
 
-    const password_hash = await bcryptjs.hash(password, 5);
+    const password_hash = await bcryptjs.hash(password, 6);
 
     const user = await this.userRepository.create({
       name,
