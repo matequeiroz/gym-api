@@ -8,5 +8,5 @@ export type UserData = {
 
 export type UserRepositoryType = {
   create(userData: UserData): Promise<User>;
-  findByEmail(where: { email: string }): Promise<User | null>;
+  findByEmail(email: string): Promise<User | null>;
 };
